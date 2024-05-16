@@ -16,13 +16,13 @@ jobs:
       - name: Set up Node.js environment
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '16'
 
       - name: Install Bruno CLI
         run: npm install -g @usebruno/cli
 
       - name: Run Bruno tests
-        run: bru run --env qa --output results.html --format html --tests-only
+        run: bru run --env qa --output ./results.html --format html --tests-only
 
       - name: Upload test results
         uses: actions/upload-artifact@v3
