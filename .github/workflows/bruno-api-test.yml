@@ -21,6 +21,9 @@ jobs:
       - name: Install Bruno CLI
         run: npm install -g @usebruno/cli
 
+      - name: Change working directory to pos
+        run: cd pos
+
       - name: Run Bruno tests
         run: bru run --env qa --output ./results.html --format html --tests-only
 
@@ -28,4 +31,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: test-results
-          path: results.html
+          path: pos/results.html
