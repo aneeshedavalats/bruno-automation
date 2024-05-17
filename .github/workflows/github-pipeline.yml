@@ -22,7 +22,7 @@ jobs:
         run: npm install -g @usebruno/cli
 
       - name: Run Bruno tests
-        run: bru run --env qa --env-var password=${{ secrets.BRUNO_PASSWORD }} -o results.html -f html --tests-only
+        run: bru run --env qa --env-var password=${{ secrets.PASSWORD }} -o results.html -f html --tests-only
         working-directory: collections/pos
 
       - name: Upload test results
